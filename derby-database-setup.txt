@@ -1,0 +1,6 @@
+CREATE TRIGGER delete_transaction_trigger
+AFTER DELETE ON transactions
+REFERENCING OLD AS deleted_row
+FOR EACH ROW MODE DB2SQL
+INSERT INTO deleted_transactions (amount, description, transaction_date, date_deleted, transaction_type_id, category_id) 
+VALUES (deleted_row.amount, deleted_row.description, deleted_row.date, CURRENT_DATE, deleted_row.transaction_type_id, deleted_row.category_id);

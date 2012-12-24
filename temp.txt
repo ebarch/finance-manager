@@ -1,0 +1,19 @@
+// get year from user
+        String year = showInputMessageDialog("Enter the year.", "Enter Year");
+        
+        TransactionsByYearForm transactionsByYearForm = new TransactionsByYearForm(Integer.parseInt(year));
+        transactionsByYearForm.setVisible(true);
+        transactionsByYearForm.setLocationRelativeTo(null);
+        transactionsByYearForm.setTitle("Transactions Summary for " + year);
+        transactionsByYearForm.createTransactionsTableByYear();
+		
+		CREATE TRIGGER transaction_delete_trigger 
+BEFORE DELETE ON transactions 
+REFERENCING OLD ROW AS deleted_row 
+FOR EACH ROW
+BEGIN ATOMIC
+	INSERT INTO deleted_transactions (transaction_id, amount, description, transaction_date, date_deleted, transaction_type_id, category_id) 
+	VALUES (deleted_row.transaction_id, deleted_row.amount, deleted_row.description, deleted_row.date, CURRENT_DATE, 
+	deleted_row.transaction_type_id, deleted_row.category_id)
+	;
+END
