@@ -60,11 +60,13 @@ public class MainForm extends javax.swing.JFrame {
         transactionDescriptionLabel = new javax.swing.JLabel();
         recentTransactionsPanel = new javax.swing.JPanel();
         mainMenuBar = new javax.swing.JMenuBar();
-        fileMenuItem = new javax.swing.JMenu();
-        editMenuItem = new javax.swing.JMenu();
-        transactionMenuItem = new javax.swing.JMenu();
+        fileMenu = new javax.swing.JMenu();
+        editMenu = new javax.swing.JMenu();
+        transactionMenu = new javax.swing.JMenu();
         addTransactionMenuItem = new javax.swing.JMenuItem();
         transactionSummaryByYearMenuItem = new javax.swing.JMenuItem();
+        toolsMenu = new javax.swing.JMenu();
+        addCategoryMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Finance Manager");
@@ -217,13 +219,13 @@ public class MainForm extends javax.swing.JFrame {
 
     mainMenuBar.setMaximumSize(new java.awt.Dimension(173, 500));
 
-    fileMenuItem.setText("File");
-    mainMenuBar.add(fileMenuItem);
+    fileMenu.setText("File");
+    mainMenuBar.add(fileMenu);
 
-    editMenuItem.setText("Edit");
-    mainMenuBar.add(editMenuItem);
+    editMenu.setText("Edit");
+    mainMenuBar.add(editMenu);
 
-    transactionMenuItem.setText("Transaction");
+    transactionMenu.setText("Transaction");
 
     addTransactionMenuItem.setText("Add...");
     addTransactionMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +233,7 @@ public class MainForm extends javax.swing.JFrame {
             addTransactionMenuItemActionPerformed(evt);
         }
     });
-    transactionMenuItem.add(addTransactionMenuItem);
+    transactionMenu.add(addTransactionMenuItem);
 
     transactionSummaryByYearMenuItem.setText("Transaction Summary By Year...");
     transactionSummaryByYearMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -239,9 +241,21 @@ public class MainForm extends javax.swing.JFrame {
             transactionSummaryByYearMenuItemActionPerformed(evt);
         }
     });
-    transactionMenuItem.add(transactionSummaryByYearMenuItem);
+    transactionMenu.add(transactionSummaryByYearMenuItem);
 
-    mainMenuBar.add(transactionMenuItem);
+    mainMenuBar.add(transactionMenu);
+
+    toolsMenu.setText("Tools");
+
+    addCategoryMenuItem.setText("Add Category...");
+    addCategoryMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            addCategoryMenuItemActionPerformed(evt);
+        }
+    });
+    toolsMenu.add(addCategoryMenuItem);
+
+    mainMenuBar.add(toolsMenu);
 
     setJMenuBar(mainMenuBar);
 
@@ -276,7 +290,9 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_addTransactionMenuItemActionPerformed
 
     private void transactionClearFormButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionClearFormButtonActionPerformed
-        // TODO add your handling code here:
+        AddCategoryForm addCategoryForm = new AddCategoryForm();
+        addCategoryForm.setVisible(true);
+        addCategoryForm.setLocationRelativeTo(null);
     }//GEN-LAST:event_transactionClearFormButtonActionPerformed
 
     private void transactionAddTransactionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionAddTransactionButtonActionPerformed
@@ -335,6 +351,10 @@ public class MainForm extends javax.swing.JFrame {
         transactionsByYearForm.createTransactionsTableByYear();
     }//GEN-LAST:event_transactionSummaryByYearMenuItemActionPerformed
 
+    private void addCategoryMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addCategoryMenuItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -391,12 +411,14 @@ public class MainForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem addCategoryMenuItem;
     private javax.swing.JMenuItem addTransactionMenuItem;
     private javax.swing.JPanel addTransactionPanel;
-    private javax.swing.JMenu editMenuItem;
-    private javax.swing.JMenu fileMenuItem;
+    private javax.swing.JMenu editMenu;
+    private javax.swing.JMenu fileMenu;
     private javax.swing.JMenuBar mainMenuBar;
     private javax.swing.JPanel recentTransactionsPanel;
+    private javax.swing.JMenu toolsMenu;
     private javax.swing.JButton transactionAddTransactionButton;
     private javax.swing.JLabel transactionAmountLabel;
     private javax.swing.JTextField transactionAmountTextField;
@@ -409,7 +431,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton transactionDebitRadioButton;
     private javax.swing.JLabel transactionDescriptionLabel;
     private javax.swing.JTextField transactionDescriptionTextField;
-    private javax.swing.JMenu transactionMenuItem;
+    private javax.swing.JMenu transactionMenu;
     private javax.swing.JMenuItem transactionSummaryByYearMenuItem;
     private javax.swing.ButtonGroup transactionTypeButtonGroup;
     // End of variables declaration//GEN-END:variables

@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Wed Dec 19 20:44:59 EST 2012:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance a816c00e-013b-b5fc-26cd-0000065db6e0 
-on database directory C:\devl\workspaces\finance-manager\derby-database  with class loader sun.misc.Launcher$AppClassLoader@77cde100 
+Mon Dec 24 19:39:22 EST 2012:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance a816c00e-013b-cf7f-def6-0000065b1cf0 
+on database directory C:\devl\workspaces\finance-manager\derby-database  with class loader sun.misc.Launcher$AppClassLoader@35a16869 
 Loaded from file:/C:/devl/tools/db-derby-10.9.1.0-bin/lib/derby.jar
 java.vendor=Sun Microsystems Inc.
 java.runtime.version=1.6.0_21-b07
