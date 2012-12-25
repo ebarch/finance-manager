@@ -1,7 +1,6 @@
 package com.ebarch.financeManager.view;
 
 import com.ebarch.financeManager.controller.CategoryController;
-import com.ebarch.financeManager.controller.DatabaseController;
 import com.ebarch.financeManager.controller.TransactionController;
 import com.ebarch.financeManager.domain.Transaction;
 import com.ebarch.financeManager.util.TransactionTypeEnum;
